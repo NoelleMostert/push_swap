@@ -6,13 +6,15 @@
 /*   By: nmostert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/24 14:34:10 by nmostert          #+#    #+#             */
-/*   Updated: 2018/08/24 14:57:44 by nmostert         ###   ########.fr       */
+/*   Updated: 2018/08/25 16:40:23 by nmostert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "struct.h"
 
-int	peek(t_stack *s)
+t_list	peek(t_stack *s)
 {
-	if(is_empty(s))
-		return 
+	if(s->head == NULL || s == NULL)
+		return (NULL);
+	return (s->head);
+}

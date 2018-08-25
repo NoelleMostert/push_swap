@@ -6,7 +6,7 @@
 /*   By: nmostert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/30 10:44:33 by nmostert          #+#    #+#             */
-/*   Updated: 2018/08/25 15:15:15 by nmostert         ###   ########.fr       */
+/*   Updated: 2018/08/25 17:02:16 by nmostert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -99,7 +99,7 @@ char			*ft_strcopy(char *ret, const char *s, int start, int end);
 int				ft_remspace(const char *str, int c);
 int				ft_wordcount(const char *str, char c);
 
-t_list			*ft_lstnew(char *str, size_t n)
+t_list			*ft_lstnew(char *str, size_t n);
 void			ft_lstdelone(t_list **alst, void (*del)(void *, size_t));
 void			ft_lstdel(t_list **alst, void (*del)(void *, size_t));
 void			ft_lstadd(t_list **alst, t_list *new);

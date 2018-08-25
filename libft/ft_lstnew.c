@@ -6,7 +6,7 @@
 /*   By: nmostert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/25 13:35:42 by nmostert          #+#    #+#             */
-/*   Updated: 2018/08/25 15:06:41 by nmostert         ###   ########.fr       */
+/*   Updated: 2018/08/25 17:07:17 by nmostert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ t_list	*ft_lstnew(char *str, size_t n)
 
 	if (!(newlist = (t_list *)malloc(sizeof(*newlist))))
 		return (NULL);
-	newlist->str = ft_strdup(str)
+	newlist->str = ft_strdup(str);
 	newlist->n = n;
 	newlist->next = NULL;
 	return (newlist);
