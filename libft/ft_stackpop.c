@@ -1,30 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_stackpop.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nmostert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/08/25 16:48:10 by nmostert          #+#    #+#             */
-/*   Updated: 2018/08/26 10:32:49 by nmostert         ###   ########.fr       */
+/*   Created: 2018/08/26 10:44:40 by nmostert          #+#    #+#             */
+/*   Updated: 2018/08/26 13:06:02 by nmostert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-#include <stdio.h>
-
-int main(void)
+t_list *ft_stackpop(char *str, size_t n)
 {
-	t_list *lst;
+	t_list *tmp;
 
-	lst = ft_lstnew("random bullshit", 74);
-	lst->next = ft_lstnew("more crap", 100);
-	ft_lstadd(&lst, ft_lstnew("grrr argh", 60));
+	if (!(tmp = (t_list *)malloc(sizeof(*newlist))))
+		return (NULL);
+	tmp->head = tmp->next
 
-	while (lst)
+
+
+t_list	*ft_stackpop(t_stack *s)
+{
+	t_list	*tmp;
+
+	tmp = NULL;
+	if (s != NULL)
 	{
-		printf("%s\n", lst->str);
-		lst = lst->next;
+		tmp = s->head;
+		if (s->head != NULL)
+		{
+			s->head = tmp->next;
+			s->size -= 1;
+		}
 	}
-	return (0);
+	return (tmp);
 }
