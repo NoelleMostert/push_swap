@@ -1,25 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstnew.c                                        :+:      :+:    :+:   */
+/*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nmostert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/08/25 13:35:42 by nmostert          #+#    #+#             */
-/*   Updated: 2018/08/26 10:23:51 by nmostert         ###   ########.fr       */
+/*   Created: 2018/08/24 14:08:33 by nmostert          #+#    #+#             */
+/*   Updated: 2018/08/27 17:24:33 by nmostert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#ifndef STRUCT_H
+# define STRUCT_H
+# define TRUE 1
+# define FALSE 0
+# include "../libft_src/libft.h"
 
-t_list	*ft_lstnew(char *str, size_t n)
+typedef struct	s_stack
 {
-	t_list *newlist;
+	size_t size;
+	t_list *head;
+}				t_stack;
 
-	if (!(newlist = (t_list *)malloc(sizeof(*newlist))))
-		return (NULL);
-	newlist->str = ft_strdup(str);
-	newlist->n = n;
-	newlist->next = NULL;
-	return (newlist);
-}
+int				isempty(t_stack *s);
+t_stack			*newstack(const void *content, size_t content_size);
+t_list			*peek(t_stack *s);
+t_list			*stackpop(t_stack *s);
+
+
+#endif

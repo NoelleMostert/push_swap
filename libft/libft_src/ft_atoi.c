@@ -1,32 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   stacknew.c                                         :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nmostert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/08/24 14:57:55 by nmostert          #+#    #+#             */
-/*   Updated: 2018/08/25 16:47:14 by nmostert         ###   ########.fr       */
+/*   Created: 2018/05/24 12:02:39 by nmostert          #+#    #+#             */
+/*   Updated: 2018/08/27 09:58:38 by nmostert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "stack.h"
+#include "libft.h"
 
-t_stack *stacknew(const void *content, size_t content_size)
+int		ft_atoi(const char *str)
 {
-	t_stack *ret;
+	int		i;
+	int		neg;
+	int		num;
 
-	if ((ret = (t_stack *)malloc(sizeof(t_stack))) == NULL)
-		return (NULL);
-	if (content != NULL)
+	i = 0;
+	neg = 0;
+	num = 0;
+	while (ft_isspace(str[i]))
+		i++;
+	if (str[i] == '-')
+		neg = 1;
+	if (str[i] == '-' || str[i] == '+')
+		i++;
+	while (str[i] >= '0' && str[i] <= '9')
 	{
-		ret->head = ft_lstnew(content, content_size);
-		ret->size = 1;
+		num = num * 10 + ((int)str[i] - '0');
+		i++;
 	}
-	else
-	{
-		ret->head = NULL;
-		ret->size = 0;
-	}
-	return (ret);
+	if (neg == 1)
+		return (-num);
+	return (num);
 }

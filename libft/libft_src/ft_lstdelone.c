@@ -1,25 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   isempty.c                                          :+:      :+:    :+:   */
+/*   ft_lstdelone.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nmostert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/08/24 14:13:05 by nmostert          #+#    #+#             */
-/*   Updated: 2018/08/24 14:57:35 by nmostert         ###   ########.fr       */
+/*   Created: 2018/06/06 13:32:38 by nmostert          #+#    #+#             */
+/*   Updated: 2018/08/27 11:49:23 by nmostert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "struct.h"
+#include "libft.h"
 
-int	is_empty(t_push *s)
+void	ft_lstdelone(t_list **alst, void (*del)(void *, size_t))
 {
-	if (s != NULL)
-	{
-		if (s->head == NULL)
-			return TRUE;
-	}
-	else
-		return (-1);
-	return FALSE;
+	del((*alst)->content, (*alst)->content_size);
+	free(*alst);
+	*alst = NULL;
 }

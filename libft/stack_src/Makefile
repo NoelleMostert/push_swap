@@ -5,41 +5,34 @@
 #                                                     +:+ +:+         +:+      #
 #    By: nmostert <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2018/08/27 08:56:15 by nmostert          #+#    #+#              #
-#    Updated: 2018/08/27 12:13:26 by nmostert         ###   ########.fr        #
+#    Created: 2018/08/27 10:06:00 by nmostert          #+#    #+#              #
+#    Updated: 2018/08/27 12:17:08 by nmostert         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-#NAME = libft.a
-PUSH = push_swap
-CHECK = checker
-
-LIBFT_SRC_PATH =./libft_src/
-STACK_SRC_PATH=./stack_src/
-
+NAME=stack.a
 CC=gcc
-
-CFLAGS=-Wall -Wextra -Werror -I $(IDIR)
+CFLAGS=-Wall -Wextra -Werror -I.
+CFILES=peek.c \
+	   stacknew.c \
+	   isempty.c \
 
 OBJ=$(CFILES:%.c=%.o)
 
 all: $(NAME)
 
 $(NAME): $(OBJ)
-	make -C $(LIBFT_SRC_PATH)
-	gcc -o $(STACK) $(CFLAGS) $(OBJ) -L $(LIBFT_SRC_PATH) -lft
+	gcc -o $(NAME) $(CFLAGS) $(OBJ) -L ../libft_src -lft
 
 %.o: %.c
 	$(CC) $(CFLAGS) $< -c -o $@
 
 clean:
-	make clean -C $(LIBFT_SRC_PATH)
-	#make clean -C $(STACK_SRC_PATH)
 	rm -rf $(OBJ)
 
 fclean: clean
-	make fclean -C $(LIBFT_SRC_PATH)
-	#make fclean -C $(STACK_SRC_PATH)
 	rm -rf $(NAME)
 
 re: fclean $(NAME)
+
+.PHONY: clean fclean re

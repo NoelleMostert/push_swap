@@ -1,20 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstdelone.c                                     :+:      :+:    :+:   */
+/*   peek.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nmostert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/06/06 13:32:38 by nmostert          #+#    #+#             */
-/*   Updated: 2018/08/25 17:06:41 by nmostert         ###   ########.fr       */
+/*   Created: 2018/08/24 14:34:10 by nmostert          #+#    #+#             */
+/*   Updated: 2018/08/27 14:46:20 by nmostert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "stack.h"
 
-void	ft_lstdelone(t_list **alst, void (*del)(void *, size_t))
+t_list	*peek(t_stack *s)
 {
-	del((*alst)->str, (*alst)->n);
-	free(*alst);
-	*alst = NULL;
+	if(s->head == NULL || s == NULL)
+		return (NULL);
+	return (s->head);
 }
+
+/*int		main()
+{
+	ft_putchar('\n');
+	return (0);
+}*/

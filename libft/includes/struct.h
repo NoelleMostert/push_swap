@@ -1,38 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nmostert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/05/24 12:02:39 by nmostert          #+#    #+#             */
-/*   Updated: 2018/08/22 16:40:23 by nmostert         ###   ########.fr       */
+/*   Created: 2018/08/24 14:08:33 by nmostert          #+#    #+#             */
+/*   Updated: 2018/08/27 09:56:24 by nmostert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#ifndef STRUCT_H
+# define STRUCT_H
+# define TRUE 1
+# define FALSE 0
+# include "libft.h"
 
-int		ft_atoi(const char *str)
+typedef struct	t_stack
 {
-	int		i;
-	int		neg;
-	int		num;
+	size_t size;
+	t_list *head;
+}				s_stack;
 
-	i = 0;
-	neg = 0;
-	num = 0;
-	while (ft_isspace(str[i]))
-		i++;
-	if (str[i] == '-')
-		neg = 1;
-	if (str[i] == '-' || str[i] == '+')
-		i++;
-	while (str[i] >= '0' && str[i] <= '9')
-	{
-		num = num * 10 + ((int)str[i] - '0');
-		i++;
-	}
-	if (neg == 1)
-		return (-num);
-	return (num);
-}
+int				isempty(t_stack *s);
+t_stack			*newstack(const void *content, size_t content_size);
+t_list			peek(t_stack *s);
+
+#endif
