@@ -1,27 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   stackpush.c                                        :+:      :+:    :+:   */
+/*   stackdel.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nmostert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/08/27 14:49:15 by nmostert          #+#    #+#             */
-/*   Updated: 2018/08/28 16:14:10 by nmostert         ###   ########.fr       */
+/*   Created: 2018/08/28 16:06:30 by nmostert          #+#    #+#             */
+/*   Updated: 2018/08/28 16:11:31 by nmostert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "stack.h"
+#include "string.h"
 
-void	stackpush(t_stack *s, t_list *elem)
+void	stackdel(t_stack **s)
 {
-	if (s != NULL)
+	t_list *tmp;
+	t_list *prev;
+
+	if (*s != NULL || s != NULL || s[0] != NULL)
 	{
-		if (s->head != NULL)
-			ft_lstadd(&s->head, elem);
-		else
+		tmp = s[0]->head;
+		while (tmp != NULL)
 		{
-			ft_lstnew(elem->content, elem->content_size);
-			s->size += 1;
+			prev = tmp;
+			tmp = tmp->next;
+			ft_memdel((void **)&prev->content);
+			ft_memdel((void **)&prev);
 		}
 	}
+	ft_memdel((void **)s);
 }

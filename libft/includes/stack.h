@@ -6,7 +6,7 @@
 /*   By: nmostert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/24 14:08:33 by nmostert          #+#    #+#             */
-/*   Updated: 2018/08/27 09:56:24 by nmostert         ###   ########.fr       */
+/*   Updated: 2018/08/28 16:15:51 by nmostert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,14 +16,19 @@
 # define FALSE 0
 # include "libft.h"
 
-typedef struct	t_stack
+typedef struct	s_stack
 {
 	size_t size;
 	t_list *head;
-}				s_stack;
+}				t_stack;
 
 int				isempty(t_stack *s);
 t_stack			*newstack(const void *content, size_t content_size);
-t_list			peek(t_stack *s);
+t_list			*peek(t_stack *s);
+t_list			*stackpop(t_stack *s);
+void			stackpush(t_stack *s, t_list *elem);
+void			stackrot(t_stack *s);
+void			stackrevrot(t_stack *s);
+void			stackdel(t_stack **s);
 
 #endif
