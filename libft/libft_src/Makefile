@@ -6,13 +6,14 @@
 #    By: nmostert <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/05/30 10:52:24 by nmostert          #+#    #+#              #
-#    Updated: 2018/08/25 15:19:30 by nmostert         ###   ########.fr        #
+#    Updated: 2018/08/29 15:06:38 by nmostert         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME=libft.a
 CC=gcc
-CFLAGS=-Wall -Wextra -Werror -c -I.
+INCLUDES=../includes/
+CFLAGS=-Wall -Wextra -Werror -c -I$(INCLUDES)
 CFILES=ft_atoi.c \
 		ft_bzero.c \
 		ft_isalnum.c \
