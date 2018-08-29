@@ -6,11 +6,11 @@
 /*   By: nmostert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/28 16:06:30 by nmostert          #+#    #+#             */
-/*   Updated: 2018/08/28 16:11:31 by nmostert         ###   ########.fr       */
+/*   Updated: 2018/08/29 15:33:37 by nmostert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "string.h"
+#include <stack.h>
 
 void	stackdel(t_stack **s)
 {

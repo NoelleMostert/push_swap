@@ -6,12 +6,12 @@
 /*   By: nmostert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/24 14:08:33 by nmostert          #+#    #+#             */
-/*   Updated: 2018/08/29 11:48:04 by nmostert         ###   ########.fr       */
+/*   Updated: 2018/08/29 15:26:26 by nmostert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef STRUCT_H
-# define STRUCT_H
+#ifndef STACK_H
+# define STACK_H
 # define TRUE 1
 # define FALSE 0
 # include "libft.h"

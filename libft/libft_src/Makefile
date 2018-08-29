@@ -6,11 +6,11 @@
 #    By: nmostert <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/05/30 10:52:24 by nmostert          #+#    #+#              #
-#    Updated: 2018/08/29 15:06:38 by nmostert         ###   ########.fr        #
+#    Updated: 2018/08/29 15:32:12 by nmostert         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME=libft.a
+#NAME=libft.a
 CC=gcc
 INCLUDES=../includes/
 CFLAGS=-Wall -Wextra -Werror -c -I$(INCLUDES)
@@ -91,10 +91,10 @@ CFILES=ft_atoi.c \
 
 OBJ=$(CFILES:%.c=%.o)
 
-all: $(NAME)
+all: $(OBJ)
 
-$(NAME): $(OBJ)
-	ar rcs $(NAME) $(OBJ)
+#$(NAME): $(OBJ)
+#	ar rcs $(NAME) $(OBJ)
 
 %.o: %.c
 	$(CC) $(CFLAGS) $< -o $@
@@ -103,8 +103,8 @@ clean:
 	rm -rf $(OBJ)
 
 fclean: clean
-	rm -rf $(NAME)
+	rm -rf $(OBJ)
 
-re: fclean $(NAME)
+re: fclean $(OBJ)
 
 .PHONY: clean fclean re
