@@ -1,31 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   stackrevrot.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nmostert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/08/24 14:08:33 by nmostert          #+#    #+#             */
-/*   Updated: 2018/08/27 17:24:33 by nmostert         ###   ########.fr       */
+/*   Created: 2018/08/29 10:49:39 by nmostert          #+#    #+#             */
+/*   Updated: 2018/08/29 11:17:32 by nmostert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef STRUCT_H
-# define STRUCT_H
-# define TRUE 1
-# define FALSE 0
-# include "../libft_src/libft.h"
+#include "stack.h"
 
-typedef struct	s_stack
+void	stackrevrot(t_stack *s)
 {
-	size_t size;
-	t_list *head;
-}				t_stack;
+	t_stack *a;
+	t_list *end;
 
-int				isempty(t_stack *s);
-t_stack			*newstack(const void *content, size_t content_size);
-t_list			*peek(t_stack *s);
-t_list			*stackpop(t_stack *s);
-
-
-#endif
+	if (isempty(s) == FALSE)
+	{
+		a = newstack(NULL, 0);
+		while (s->size > 1)
+			stackpush(a, stackpop(s));
+		end = stackpop(s);
+		while (isempty(a) == FALSE)
+			stackpush(s, stackpop(a));
+		stackpush(s, end);
+		stackdel(&a);
+	}
+}
