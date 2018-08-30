@@ -6,7 +6,7 @@
 /*   By: nmostert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/28 16:15:26 by nmostert          #+#    #+#             */
-/*   Updated: 2018/08/28 16:21:52 by nmostert         ###   ########.fr       */
+/*   Updated: 2018/08/30 08:40:20 by nmostert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void	stackrot(t_stack *s)
 	if (isempty(s) == FALSE)
 	{
 		head = stackpop(s);
-		a = newstack(NULL, 0);
+		a = stacknew(NULL, 0);
 		while (isempty(s) == FALSE)
 			stackpush(a, stackpop(s));
 		stackpush(s, head);
