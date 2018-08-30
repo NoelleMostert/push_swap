@@ -6,7 +6,7 @@
 /*   By: nmostert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/30 09:04:04 by nmostert          #+#    #+#             */
-/*   Updated: 2018/08/30 09:37:13 by nmostert         ###   ########.fr       */
+/*   Updated: 2018/08/30 16:08:57 by nmostert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,4 +23,7 @@ void	rot_ab(t_stack *a, t_stack *b);
 void	revrot_a(t_stack *a);
 void	revrot_b(t_stack *b);
 void	revrot_ab(t_stack *a, t_stack *b);
+void	push_a(t_stack *a, t_stack *b);
+void	push_b(t_stack *a, t_stack *b);
 
+#endif
