@@ -6,7 +6,7 @@
 /*   By: nmostert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/30 11:53:31 by nmostert          #+#    #+#             */
-/*   Updated: 2018/08/30 16:08:54 by nmostert         ###   ########.fr       */
+/*   Updated: 2018/08/31 11:09:13 by nmostert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,4 +34,21 @@ void	displaystack(t_list *astart, t_list *bstart, t_list *aend, t_list *bend)
 			ft_putstr_fd("--\n", 2);
 	}
 	ft_putstr_fd("--\t--\nA\tB\n", 2);
+}
+
+void	printstack(t_stack *a, t_stack *b, char *str)
+{
+	t_list *ahead;
+	t_list *bhead;
+
+	ahead = peek(a);
+	bhead = peek(b);
+	if (strcmp(str, "sa") == 0 || strcmp(str, "sb") == 0 || strcmp(str, "ss")
+			== 0 || strcmp(str, "pa") == 0 || strcmp(str, "pb") == 0 ||
+			strcmp(str, "ra") == 0 || strcmp(str, "rb") == 0 ||
+			strcmp(str, "rrr") == 0 || strcmp(str, "rra") == 0 ||
+			strcmp(str, "rrb") == 0 || strcmp(str, "rrr") == 0)
+		displaystack(ahead, bhead, NULL, NULL);
+	else
+		putstr("Error");
 }
