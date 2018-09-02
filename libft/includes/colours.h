@@ -6,7 +6,7 @@
 /*   By: nmostert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/31 08:33:57 by nmostert          #+#    #+#             */
-/*   Updated: 2018/08/31 09:52:46 by nmostert         ###   ########.fr       */
+/*   Updated: 2018/09/02 11:22:10 by nmostert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,5 +25,6 @@
 # define BOLD MAGENTA "\033[1;35m"
 # define CYAN "\033[0;36m"
 # define BOLD CYAN "\033[1;36m"
+# define DEFAULT_FRONT "\033[0;39m"
 
 #endif

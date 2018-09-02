@@ -6,7 +6,7 @@
 /*   By: nmostert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/30 11:53:31 by nmostert          #+#    #+#             */
-/*   Updated: 2018/08/31 11:09:13 by nmostert         ###   ########.fr       */
+/*   Updated: 2018/09/01 11:30:58 by nmostert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,5 +50,5 @@ void	printstack(t_stack *a, t_stack *b, char *str)
 			strcmp(str, "rrb") == 0 || strcmp(str, "rrr") == 0)
 		displaystack(ahead, bhead, NULL, NULL);
 	else
-		putstr("Error");
+		putstr("Invalid input");
 }

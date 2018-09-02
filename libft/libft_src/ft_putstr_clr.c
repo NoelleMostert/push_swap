@@ -1,25 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   isempty.c                                          :+:      :+:    :+:   */
+/*   ft_putstr_clr.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nmostert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/08/24 14:13:05 by nmostert          #+#    #+#             */
-/*   Updated: 2018/09/01 14:19:17 by nmostert         ###   ########.fr       */
+/*   Created: 2018/09/02 11:18:33 by nmostert          #+#    #+#             */
+/*   Updated: 2018/09/02 11:22:18 by nmostert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stack.h>
-
-int	isempty(t_stack *s)
+void	ft_putstr_clr(char const *clr, char const *str)
 {
-	if (s != NULL)
-	{
-		if (s->head == NULL)
-			return TRUE;
-	}
-	else
-		return (-1);
-	return FALSE;
+	ft_putstr(clr);
+	ft_putstr(str);
+	ft_putstr(DEFAULT_FRONT);
 }
