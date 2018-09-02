@@ -6,7 +6,7 @@
 /*   By: nmostert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/30 11:53:31 by nmostert          #+#    #+#             */
-/*   Updated: 2018/09/02 13:05:07 by nmostert         ###   ########.fr       */
+/*   Updated: 2018/09/01 11:30:58 by nmostert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,28 +36,6 @@ void	displaystack(t_list *astart, t_list *bstart, t_list *aend, t_list *bend)
 	ft_putstr_fd("--\t--\nA\tB\n", 2);
 }
 
-void	printstacks_clr(t_stack *a, t_stack *b, char *str)
-{
-	t_list	*head_a;
-	t_list	*head_b;
-
-	head_a = ft_stacktop(a);
-	head_b = ft_stacktop(b);
-	ft_putstr_clr(BLUE, str);
-	ft_putchar('\n');
-	if (ft_strcmp(str, "pa") == 0 || ft_strcmp(str, "pb") == 0)
-		push_print(head_a, head_b, str);
-	else if (ft_strcmp(str, "sa") == 0 || ft_strcmp(str, "sb") == 0
-		|| ft_strcmp(str, "ss") == 0)
-		swap_print(head_a, head_b, str);
-	else if (ft_strcmp(str, "ra") == 0 || ft_strcmp(str, "rb") == 0
-		|| ft_strcmp(str, "rr") == 0 || ft_strcmp(str, "rra") == 0 ||
-		ft_strcmp(str, "rrb") == 0 || ft_strcmp(str, "rrr") == 0)
-		rotate_print(head_a, head_b, str);
-	else
-		ft_putstr_clr(RED, "Invalid move selected\n");
-}
-
 void	printstack(t_stack *a, t_stack *b, char *str)
 {
 	t_list *ahead;
@@ -72,5 +50,5 @@ void	printstack(t_stack *a, t_stack *b, char *str)
 			strcmp(str, "rrb") == 0 || strcmp(str, "rrr") == 0)
 		displaystack(ahead, bhead, NULL, NULL);
 	else
-		ft_putstr_clr(RED, "Invalid move selected\n");
+		putstr("Invalid input");
 }
