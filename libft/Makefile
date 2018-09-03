@@ -6,42 +6,40 @@
 #    By: nmostert <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/08/27 08:56:15 by nmostert          #+#    #+#              #
-#    Updated: 2018/08/29 15:45:57 by nmostert         ###   ########.fr        #
+#    Updated: 2018/09/03 17:39:30 by nmostert         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libft.a
-
 LIBFT_SRC_PATH =./libft_src/
-STACK_SRC_PATH=./stack_src/
-IDIR=./includes/
-CC=gcc
+STACK_SRC_PATH =./stack_src/
+OBJ_P =./objs/
+IDIR =./includes/
 
-CFLAGS=-Wall -Wextra -Werror -I$(IDIR)
+CFLAGS = -Wall -Wextra -Werror -I$(IDIR)
+CC = gcc $(CFLAGS)
 
-
-#OBJ=$(LIB_SRC_PATH:%.c=%.o)
-#OBJ+=$(STACK_SRC_PATH:%.c=%.o)
-OBJ=$(wildcard */*.o)
+OBJ=$(wildcard ./objs/*.o)
 
 all: $(NAME)
 
-$(NAME): $(OBJ)
-	make -C $(LIBFT_SRC_PATH)
-	make -C $(STACK_SRC_PATH)
+$(NAME): SUBDIR
 	ar rcs $(NAME) $(OBJ)
+	ranlib $(NAME)
+	find . -name "*.h.gch" -delete
 
-#%.o: %.c
-#	$(CC) $(CFLAGS) $< -c -o $@
+SUBDIR:
+	@mkdir $(OBJ_PATH) 2> /dev/null || true
+	@make -C $(LIBFT_SRC_PATH)
+	@make -C $(STACK_SRC_PATH)
 
 clean:
-	make clean -C $(LIBFT_SRC_PATH)
-	make clean -C $(STACK_SRC_PATH)
-	rm -rf $(OBJ)
+	/bin/rm -f $(OBJ)
+	/bin/rm -rf $(OBJ_P) 2> /dev/null || true
 
 fclean: clean
-	make fclean -C $(LIBFT_SRC_PATH)
-	#make fclean -C $(STACK_SRC_PATH)
-	rm -rf $(NAME)
+	/bin/rm -f $(NAME)
 
-re: fclean $(NAME)
+re: fclean all
+
+.PHONY: clean fclean re

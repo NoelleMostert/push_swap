@@ -6,15 +6,14 @@
 #    By: nmostert <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/08/27 10:06:00 by nmostert          #+#    #+#              #
-#    Updated: 2018/08/29 15:24:08 by nmostert         ###   ########.fr        #
+#    Updated: 2018/09/03 17:26:03 by nmostert         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-#NAME=stack.a
-CC=gcc
 INCLUDES=../includes/
-CFLAGS=-Wall -Wextra -Werror -I$(INCLUDES)
-CFILES=peek.c \
+OBJ_P=../objs/
+CFLAGS = -Wall -Werror -Wextra
+CFILES = peek.c \
 	   stacknew.c \
 	   isempty.c \
 	   stackdel.c \
@@ -24,19 +23,19 @@ CFILES=peek.c \
 	   stackpush.c \
 	   stackpop.c \
 
-OBJ=$(CFILES:%.c=%.o)
+OBJ = $(C_FILES:%.c=%.o)
+CC = gcc $(CFLAGS)
+FILES=$(addprefix $(OBJ_P), $(OBJ))
 
-all: $(OBJ)
-
-%.o: %.c
-	$(CC) $(CFLAGS) $< -c -o $@
+all: $(C_FILES)
+ifeq ("$(wildcard $(FILES))","")
+	$(CC) -I$(INCLUDES) -c $(CFILES)
+	mv *.o $(OBJ_P)
+endif
 
 clean:
-	rm -rf $(OBJ)
+	/bin/rm -f $(addprefix $(OBJ_P), $(OBJ))
 
-fclean: clean
-	rm -rf $(OBJ)
-
-re: fclean $(OBJ)
+re: clean all
 
 .PHONY: clean fclean re

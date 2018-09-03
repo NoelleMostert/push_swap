@@ -6,7 +6,7 @@
 #    By: nmostert <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/09/03 12:57:38 by nmostert          #+#    #+#              #
-#    Updated: 2018/09/03 15:23:37 by nmostert         ###   ########.fr        #
+#    Updated: 2018/09/03 17:55:40 by nmostert         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,14 +23,14 @@ SRC_P = ./helpers/
 OBJ_P = ./objs/
 INC = ./includes/
 
-C_FILES = ft_flags.c \
+CFILES = ft_flags.c \
 		   print.c \
 		   sorting.c \
 		   pushing.c \
 		   rotating.c \
 		   swaping.c \
 
-OBJ_NAME = $(C_FILES:%c=%o)
+OBJ_N = $(CFILES:%.c=%.o)
 
 SRC = $(addprefix $(SRC_P)/,$(SRC_N))
 OBJ = $(addprefix $(OBJ_P)/,$(OBJ_N))
@@ -64,3 +64,5 @@ fcleanlib:
 	@make fclean -C ./libft/
 
 re : fclean all
+
+.PHONY: clean fclean re

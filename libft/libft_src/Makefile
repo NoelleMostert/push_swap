@@ -6,14 +6,14 @@
 #    By: nmostert <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/05/30 10:52:24 by nmostert          #+#    #+#              #
-#    Updated: 2018/08/29 15:32:12 by nmostert         ###   ########.fr        #
+#    Updated: 2018/09/03 17:33:53 by nmostert         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-#NAME=libft.a
-CC=gcc
+OBJ_P=../objs/
 INCLUDES=../includes/
-CFLAGS=-Wall -Wextra -Werror -c -I$(INCLUDES)
+CFLAGS=-Wall -Wextra -Werror
+CC=gcc $(FLAGS)
 CFILES=ft_atoi.c \
 		ft_bzero.c \
 		ft_isalnum.c \
@@ -91,20 +91,18 @@ CFILES=ft_atoi.c \
 
 OBJ=$(CFILES:%.c=%.o)
 
-all: $(OBJ)
+FILES=$(addprefix $(OBJ_PATH), $(OBJ))
 
-#$(NAME): $(OBJ)
-#	ar rcs $(NAME) $(OBJ)
 
-%.o: %.c
-	$(CC) $(CFLAGS) $< -o $@
+all: $(SRC_NAME)
+ifeq ("$(wildcard $(FILES))","")
+	$(CC) -I$(INCLUDES) -c $(SRC_NAME)
+	mv *.o $(OBJ_PATH)
+endif
 
 clean:
-	rm -rf $(OBJ)
+	/bin/rm -f $(addprefix $(OBJ_PATH), $(OBJ))
 
-fclean: clean
-	rm -rf $(OBJ)
-
-re: fclean $(OBJ)
+re: clean all
 
 .PHONY: clean fclean re
