@@ -6,7 +6,7 @@
 /*   By: nmostert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/01 12:36:55 by nmostert          #+#    #+#             */
-/*   Updated: 2018/08/22 16:38:02 by nmostert         ###   ########.fr       */
+/*   Updated: 2018/09/03 11:16:55 by nmostert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,7 @@ static char		*ft_joinends(char *c[1], const int fd)
 		buff[r] = '\0';
 		if ((tmp = ft_strjoin(c[fd], buff)) == NULL)
 			return (NULL);
+		free(c[fd]);
 		c[fd] = tmp;
 		if (ft_strchr(buff, '\n') || r < BUFF_SIZE)
 			break ;
@@ -59,6 +60,7 @@ int				get_next_line(const int fd, char **line)
 		return (0);
 	if ((tmp = ft_strdup(c[fd] + r + (c[fd][r] == '\n'))) == NULL)
 		return (-1);
+	free(c[fd]);
 	c[fd] = tmp;
 	return (1);
 }

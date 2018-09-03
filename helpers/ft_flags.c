@@ -6,7 +6,7 @@
 /*   By: nmostert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/02 11:08:42 by nmostert          #+#    #+#             */
-/*   Updated: 2018/09/02 12:22:12 by nmostert         ###   ########.fr       */
+/*   Updated: 2018/09/03 11:07:36 by nmostert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ void	flag_check(t_flags *flag)
 			ft_putstr_clr(GREEN, "Colour mode enabled.\n");
 		else
 			ft_putstr_clr(RED, "Colour mode requires -v to be set.\n");
-	}	
+	}
 }
 
 void	contains_flags(int ac, char **av, t_flags *flags)

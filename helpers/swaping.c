@@ -1,38 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_stackpop.c                                      :+:      :+:    :+:   */
+/*   swap_a.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nmostert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/08/26 10:44:40 by nmostert          #+#    #+#             */
-/*   Updated: 2018/08/26 13:06:02 by nmostert         ###   ########.fr       */
+/*   Created: 2018/08/30 09:08:29 by nmostert          #+#    #+#             */
+/*   Updated: 2018/09/03 13:55:47 by nmostert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-t_list *ft_stackpop(char *str, size_t n)
+#include "../includes/push_swap.h"
+
+void	swap_a(t_stack *a)
 {
-	t_list *tmp;
+	if (a != NULL)
+		stackswap(a);
+}
 
-	if (!(tmp = (t_list *)malloc(sizeof(*newlist))))
-		return (NULL);
-	tmp->head = tmp->next
-
-
-
-t_list	*ft_stackpop(t_stack *s)
+void	swap_b(t_stack *b)
 {
-	t_list	*tmp;
+	if (b != NULL)
+		stackswap(b);
+}
 
-	tmp = NULL;
-	if (s != NULL)
-	{
-		tmp = s->head;
-		if (s->head != NULL)
-		{
-			s->head = tmp->next;
-			s->size -= 1;
-		}
-	}
-	return (tmp);
+void swap_ab(t_stack *a, t_stack *b)
+{
+		swap_a(a);
+		swap_b(b);
 }

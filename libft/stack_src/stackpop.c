@@ -6,7 +6,7 @@
 /*   By: nmostert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/27 14:02:03 by nmostert          #+#    #+#             */
-/*   Updated: 2018/08/29 15:48:54 by nmostert         ###   ########.fr       */
+/*   Updated: 2018/09/03 11:23:17 by nmostert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@ t_list	*stackpop(t_stack *s)
 	t_list *tmp;
 
 	tmp = NULL;
-
 	if (s != NULL)
 	{
 		tmp = s->head;

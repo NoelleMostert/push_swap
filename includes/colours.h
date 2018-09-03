@@ -6,12 +6,12 @@
 /*   By: nmostert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/31 08:33:57 by nmostert          #+#    #+#             */
-/*   Updated: 2018/09/02 11:22:10 by nmostert         ###   ########.fr       */
+/*   Updated: 2018/09/03 11:10:37 by nmostert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef COLOURS_H
-# define COLOURS
+# define COLOURS_H
 
 # define RED "\033[0;31m"
 # define BOLD RED "\033[1;31m"

@@ -6,7 +6,7 @@
 /*   By: nmostert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/24 14:13:05 by nmostert          #+#    #+#             */
-/*   Updated: 2018/09/01 14:19:17 by nmostert         ###   ########.fr       */
+/*   Updated: 2018/09/03 11:21:49 by nmostert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,9 @@ int	isempty(t_stack *s)
 	if (s != NULL)
 	{
 		if (s->head == NULL)
-			return TRUE;
+			return (TRUE);
 	}
 	else
 		return (-1);
-	return FALSE;
+	return (FALSE);
 }

@@ -6,7 +6,7 @@
 /*   By: nmostert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/24 14:34:10 by nmostert          #+#    #+#             */
-/*   Updated: 2018/08/27 14:46:20 by nmostert         ###   ########.fr       */
+/*   Updated: 2018/09/03 11:22:40 by nmostert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,7 @@
 
 t_list	*peek(t_stack *s)
 {
-	if(s->head == NULL || s == NULL)
+	if (s->head == NULL || s == NULL)
 		return (NULL);
 	return (s->head);
 }
-
-/*int		main()
-{
-	ft_putchar('\n');
-	return (0);
-}*/
