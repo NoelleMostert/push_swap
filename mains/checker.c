@@ -6,7 +6,7 @@
 /*   By: nmostert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/30 11:02:22 by nmostert          #+#    #+#             */
-/*   Updated: 2018/09/03 11:12:40 by nmostert         ###   ########.fr       */
+/*   Updated: 2018/09/04 13:41:58 by nmostert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ static void	move(t_stack *a, t_stack *b, char *str)
 	else if (ft_strcmp(str, "sb") == 0)
 		swap_b(b);
 	else if (ft_strcmp(str, "ss") == 0)
-		swap_s(a, b);
+		swap_ab(a, b);
 	else if (ft_strcmp(str, "pa") == 0)
 		push_a(a, b);
 	else if (ft_strcmp(str, "pb") == 0)
@@ -28,13 +28,13 @@ static void	move(t_stack *a, t_stack *b, char *str)
 		rot_a(a);
 }
 
-static void	read(t_stack *a, t_stack *b, t_flags *f)
+static void	readdo(t_stack *a, t_stack *b, t_flags *f)
 {
 	char	*str;
 	int		read_ret;
 	while ((read_ret = get_next_line(0, &str)) > 0)
 	{
-		select_move(a, b, str);
+		move(a, b, str);
 		if (ft_strcmp(str, "rb") == 0)
 			rot_b(b);
 		else if (ft_strcmp(str, "rr") == 0)
@@ -51,7 +51,7 @@ static void	read(t_stack *a, t_stack *b, t_flags *f)
 			break ;
 		}
 		if (f->v == 1)
-			print_stacks(a, b, str);
+			printstack(a, b, str);
 		free(str);
 	}
 	if (str != NULL)
@@ -120,7 +120,9 @@ int			main(int ac, char **av)
 		flag_check(&flag);
 		if (parse_content(ac, av, &flag, a) == 0)
 			return (0);
-		read_apply(a, b, &flag);
+		if (a->head == NULL)
+			ft_putstr("null head\n");
+		readdo(a, b, &flag);
 		if (a->head != NULL && is_sorted(a->head) && isempty(b) == TRUE)
 			ft_putendl("OK");
 		else

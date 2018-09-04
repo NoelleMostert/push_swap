@@ -6,15 +6,15 @@
 #    By: nmostert <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/05/30 10:52:24 by nmostert          #+#    #+#              #
-#    Updated: 2018/09/03 17:33:53 by nmostert         ###   ########.fr        #
+#    Updated: 2018/09/04 09:36:28 by nmostert         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-OBJ_P=../objs/
-INCLUDES=../includes/
-CFLAGS=-Wall -Wextra -Werror
-CC=gcc $(FLAGS)
-CFILES=ft_atoi.c \
+OBJ_PATH =../objs/
+INCLUDES =../includes/
+
+SRC_NAME=ft_atoi.c \
+		ft_atol.c \
 		ft_bzero.c \
 		ft_isalnum.c \
 		ft_isalpha.c \
@@ -39,6 +39,7 @@ CFILES=ft_atoi.c \
 		ft_putnbr_fd.c \
 		ft_putstr.c \
 		ft_putstr_fd.c \
+		ft_putstr_clr.c \
 		ft_strcat.c \
 		ft_strchr.c \
 		ft_strclr.c \
@@ -89,14 +90,15 @@ CFILES=ft_atoi.c \
 		ft_strsplit_word.c \
 		ft_lstnew.c \
 
-OBJ=$(CFILES:%.c=%.o)
-
+FLAGS= -Wall -Werror -Wextra
+OBJ = $(SRC_NAME:%.c=%.o)
+CC = gcc $(FLAGS)
 FILES=$(addprefix $(OBJ_PATH), $(OBJ))
 
 
 all: $(SRC_NAME)
 ifeq ("$(wildcard $(FILES))","")
-	$(CC) -I$(INCLUDES) -c $(SRC_NAME)
+	$(CC) -I$(INCLUDES) -c $(SRC_NAME) -ggdb3
 	mv *.o $(OBJ_PATH)
 endif
 
@@ -104,5 +106,3 @@ clean:
 	/bin/rm -f $(addprefix $(OBJ_PATH), $(OBJ))
 
 re: clean all
-
-.PHONY: clean fclean re

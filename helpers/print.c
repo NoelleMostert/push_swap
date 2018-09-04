@@ -6,34 +6,36 @@
 /*   By: nmostert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/30 11:53:31 by nmostert          #+#    #+#             */
-/*   Updated: 2018/09/03 13:53:42 by nmostert         ###   ########.fr       */
+/*   Updated: 2018/09/04 11:49:18 by nmostert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
+#include <stdio.h>
 
 void	displaystack(t_list *astart, t_list *bstart, t_list *aend, t_list *bend)
 {
+
 	while (astart != aend || bstart != bend)
 	{
-		if (astart != aend && bstart != NULL)
+		if (astart != aend)
 		{
-			ft_putnbr_fd(*(int *)astart->content, 2);
-			ft_putchar_fd('\t', 2);
+			ft_putnbr_fd(*(int *)astart->content, 1);
+			ft_putchar_fd('\t', 1);
 			astart = astart->next;
 		}
 		else
-			ft_putstr_fd("--\t", 2);
-		if (bstart != bend && bstart != NULL)
+			ft_putstr_fd("--\t", 1);
+		if (bstart != bend)
 		{
-			ft_putnbr_fd(*(int *)bstart->content, 2);
-			ft_putchar_fd('\n', 2);
+			ft_putnbr_fd(*(int *)bstart->content, 1);
+			ft_putchar_fd('\n', 1);
 			bstart = bstart->next;
 		}
 		else
-			ft_putstr_fd("--\n", 2);
+			ft_putstr_fd("--\n", 1);
 	}
-	ft_putstr_fd("--\t--\nA\tB\n", 2);
+	ft_putstr_fd("--\t--\nA\tB\n", 1);
 }
 
 void	printstack(t_stack *a, t_stack *b, char *str)

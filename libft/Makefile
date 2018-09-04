@@ -6,20 +6,20 @@
 #    By: nmostert <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/08/27 08:56:15 by nmostert          #+#    #+#              #
-#    Updated: 2018/09/03 17:39:30 by nmostert         ###   ########.fr        #
+#    Updated: 2018/09/04 08:37:28 by nmostert         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libft.a
-LIBFT_SRC_PATH =./libft_src/
-STACK_SRC_PATH =./stack_src/
-OBJ_P =./objs/
-IDIR =./includes/
+INC_PATH=./includes/
+LIB_SRC_PATH =./libft_src/
+STACK_SRC_PATH=./stack_src/
+OBJ_PATH=./objs/
 
-CFLAGS = -Wall -Wextra -Werror -I$(IDIR)
-CC = gcc $(CFLAGS)
+FLAGS = -Wall -Wextra -Werror
+CC = gcc $(FLAGS)
 
-OBJ=$(wildcard ./objs/*.o)
+OBJ= $(wildcard ./objs/*.o)
 
 all: $(NAME)
 
@@ -30,16 +30,14 @@ $(NAME): SUBDIR
 
 SUBDIR:
 	@mkdir $(OBJ_PATH) 2> /dev/null || true
-	@make -C $(LIBFT_SRC_PATH)
+	@make -C $(LIB_SRC_PATH)
 	@make -C $(STACK_SRC_PATH)
 
 clean:
 	/bin/rm -f $(OBJ)
-	/bin/rm -rf $(OBJ_P) 2> /dev/null || true
+	/bin/rm -rf $(OBJ_PATH) 2> /dev/null || true
 
 fclean: clean
 	/bin/rm -f $(NAME)
 
 re: fclean all
-
-.PHONY: clean fclean re

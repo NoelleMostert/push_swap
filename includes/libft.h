@@ -6,7 +6,7 @@
 /*   By: nmostert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/30 10:44:33 by nmostert          #+#    #+#             */
-/*   Updated: 2018/08/30 16:09:05 by nmostert         ###   ########.fr       */
+/*   Updated: 2018/09/04 09:38:53 by nmostert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 # include <string.h>
 # include <stdlib.h>
 # include <unistd.h>
+# include "colours.h"
 # define BUFF_SIZE 1
 
 typedef struct	s_list
@@ -63,6 +64,7 @@ void			ft_putnbr(int n);
 void			ft_putchar_fd(char c, int fd);
 void			ft_putnbr_fd(int n, int fd);
 void			ft_putstr_fd(char const *s, int fd);
+void			ft_putstr_clr(char const *clr, char const *str);
 void			ft_putendl_fd(char const *s, int fd);
 void			ft_puttab(char **s);
 void			ft_puttab_fd(char **s, int fd);
@@ -89,6 +91,8 @@ char			*ft_strncat(char *s1, const char *s2, size_t n);
 char			*ft_strstr(const char *haystack, const char *needle);
 char			*ft_strndup(const char *s1, size_t n);
 char			*ft_strsplit_word(char const *s, char c, size_t num);
+
+long			ft_atol(const char *str);
 
 size_t			ft_strlen(const char *s);
 size_t			ft_strlcat(char *dst, const char *src, size_t dstsize);

@@ -6,14 +6,13 @@
 #    By: nmostert <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/08/27 10:06:00 by nmostert          #+#    #+#              #
-#    Updated: 2018/09/03 17:26:03 by nmostert         ###   ########.fr        #
+#    Updated: 2018/09/04 08:27:04 by nmostert         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 INCLUDES=../includes/
-OBJ_P=../objs/
-CFLAGS = -Wall -Werror -Wextra
-CFILES = peek.c \
+OBJ_PATH=../objs/
+SRC_NAME= peek.c \
 	   stacknew.c \
 	   isempty.c \
 	   stackdel.c \
@@ -23,19 +22,18 @@ CFILES = peek.c \
 	   stackpush.c \
 	   stackpop.c \
 
-OBJ = $(C_FILES:%.c=%.o)
-CC = gcc $(CFLAGS)
-FILES=$(addprefix $(OBJ_P), $(OBJ))
+FLAGS= -Wall -Werror -Wextra
+OBJ = $(SRC_NAME:%.c=%.o)
+CC = gcc $(FLAGS)
+FILES=$(addprefix $(OBJ_PATH), $(OBJ))
 
-all: $(C_FILES)
+all: $(SRC_NAME)
 ifeq ("$(wildcard $(FILES))","")
-	$(CC) -I$(INCLUDES) -c $(CFILES)
-	mv *.o $(OBJ_P)
+	$(CC) -I$(INCLUDES) -c $(SRC_NAME)
+	mv *.o $(OBJ_PATH)
 endif
 
 clean:
-	/bin/rm -f $(addprefix $(OBJ_P), $(OBJ))
+	/bin/rm -f $(addprefix $(OBJ_PATH), $(OBJ))
 
 re: clean all
-
-.PHONY: clean fclean re

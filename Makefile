@@ -6,7 +6,7 @@
 #    By: nmostert <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/09/03 12:57:38 by nmostert          #+#    #+#              #
-#    Updated: 2018/09/03 17:55:40 by nmostert         ###   ########.fr        #
+#    Updated: 2018/09/04 13:40:21 by nmostert         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,12 +23,12 @@ SRC_P = ./helpers/
 OBJ_P = ./objs/
 INC = ./includes/
 
-CFILES = ft_flags.c \
-		   print.c \
+CFILES =  print.c \
 		   sorting.c \
 		   pushing.c \
 		   rotating.c \
 		   swaping.c \
+		   ft_flags.c \
 
 OBJ_N = $(CFILES:%.c=%.o)
 

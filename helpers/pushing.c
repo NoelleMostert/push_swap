@@ -6,7 +6,7 @@
 /*   By: nmostert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/30 09:44:28 by nmostert          #+#    #+#             */
-/*   Updated: 2018/09/03 13:54:29 by nmostert         ###   ########.fr       */
+/*   Updated: 2018/09/04 09:14:34 by nmostert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,11 +15,11 @@
 void	push_a(t_stack *a, t_stack *b)
 {
 	if (isempty(b) == FALSE)
-		stackpush(a, stackpop(b))
+		stackpush(a, stackpop(b));
 }
 
 void	push_b(t_stack *a, t_stack *b)
 {
 	if (isempty(a) == FALSE)
-		stackpush(b, stackpop(a))
+		stackpush(b, stackpop(a));
 }

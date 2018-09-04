@@ -6,7 +6,7 @@
 /*   By: nmostert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/04 11:08:22 by nmostert          #+#    #+#             */
-/*   Updated: 2018/06/04 11:44:23 by nmostert         ###   ########.fr       */
+/*   Updated: 2018/09/04 11:56:07 by nmostert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ char	**ft_strsplit(char const *s, char c)
 	int		scount;
 	int		start;
 
-	if (!s || !(ret = (char **)ft_memalloc(sizeof(char *)
+	if (!s || !(ret = (char **)malloc(sizeof(char *)
 					* (ft_wordcount(s, c) + 1))))
 		return (NULL);
 	scount = 0;
