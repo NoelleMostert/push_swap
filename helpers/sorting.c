@@ -6,7 +6,7 @@
 /*   By: nmostert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/03 09:52:16 by nmostert          #+#    #+#             */
-/*   Updated: 2018/09/04 13:41:23 by nmostert         ###   ########.fr       */
+/*   Updated: 2018/09/04 15:16:03 by nmostert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ int		duplicates(int ac, long arr[])
 	int	i;
 
 	tmp = 0;
-	while (tmp < ac - 1)
+	while (tmp < ac)
 	{
 		i = tmp + 1;
 		while (i <= ac)

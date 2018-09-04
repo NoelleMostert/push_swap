@@ -6,7 +6,7 @@
 #    By: nmostert <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/08/27 10:06:00 by nmostert          #+#    #+#              #
-#    Updated: 2018/09/04 08:27:04 by nmostert         ###   ########.fr        #
+#    Updated: 2018/09/04 16:39:44 by nmostert         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,6 +21,7 @@ SRC_NAME= peek.c \
 	   stackswap.c \
 	   stackpush.c \
 	   stackpop.c \
+	   stackmin.c \
 
 FLAGS= -Wall -Werror -Wextra
 OBJ = $(SRC_NAME:%.c=%.o)
