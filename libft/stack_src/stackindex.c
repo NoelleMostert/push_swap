@@ -1,33 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   stacknew.c                                         :+:      :+:    :+:   */
+/*   stackindex.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nmostert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/08/24 14:57:55 by nmostert          #+#    #+#             */
-/*   Updated: 2018/09/05 14:41:48 by nmostert         ###   ########.fr       */
+/*   Created: 2018/09/05 13:57:32 by nmostert          #+#    #+#             */
+/*   Updated: 2018/09/05 13:59:17 by nmostert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stack.h>
 
-t_stack	*stacknew(const void *content, size_t content_size)
+int	ft_stack_indexof(t_stack *s, t_list *elem)
 {
-	t_stack *ret;
+	int		count;
+	t_list	*tmp;
 
-	if ((ret = (t_stack *)malloc(sizeof(t_stack))) == NULL)
-		return (NULL);
-	if (content != NULL)
+	count = 0;
+	if (s != NULL && s->head != NULL)
 	{
-		//ret->head = ft_lstnew(content, content_size);
-		ft_lstadd(&ret->head, ft_lstnew(content, content_size));
-		ret->size = 1;
+		tmp = s->head;
+		while (tmp != NULL)
+		{
+			if (ft_memcmp(tmp->content, elem->content, elem->content_size) == 0)
+				return (count);
+			count++;
+			tmp = tmp->next;
+		}
 	}
-	else
-	{
-		ret->head = NULL;
-		ret->size = 0;
-	}
-	return (ret);
+	return (-1);
 }

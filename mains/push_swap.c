@@ -6,7 +6,7 @@
 /*   By: nmostert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/01 11:59:45 by nmostert          #+#    #+#             */
-/*   Updated: 2018/09/04 13:43:01 by nmostert         ###   ########.fr       */
+/*   Updated: 2018/09/05 14:43:15 by nmostert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ static void	push_swap(t_stack *a, t_stack *b)
 	if(a->size == 5)
 	{
 		b->size = 1;
-		//tmp = algo(a, b, a->size);
+		//tmp = algo(a, b);
 		//swapnfree(&ret, ft_strjoin(ret, tmp));
 	}
 	ft_putstr(ret);
@@ -37,12 +37,12 @@ static void	work(int count, char **av)
 	t_stack *b;
 	int		*x;
 
-	//if (is_valid(count, av) == FALSE)
-	//{
-	//	ft_putendl_fd("Error", 2);
-	//}
-	//else
-	//{
+	if (is_valid(count, av) == FALSE)
+	{
+		ft_putendl_fd("Error", 2);
+	}
+	else
+	{
 		b = stacknew(NULL, 0);
 		a = stacknew(NULL, 0);
 		x = (int *)malloc(sizeof(int));
@@ -55,7 +55,7 @@ static void	work(int count, char **av)
 		push_swap(a, b);
 		stackdel(&a);
 		stackdel(&b);
-	//}
+	}
 }
 
 int			main(int ac, char **av)

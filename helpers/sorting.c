@@ -6,13 +6,35 @@
 /*   By: nmostert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/03 09:52:16 by nmostert          #+#    #+#             */
-/*   Updated: 2018/09/04 15:16:03 by nmostert         ###   ########.fr       */
+/*   Updated: 2018/09/05 16:51:19 by nmostert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
 int is_sorted(t_list *head)
+{
+	int		*x;
+	int		*y;
+	t_list	*tmp;
+	t_list	*prev;
+
+	tmp = head;
+	if (tmp == NULL)
+		return (TRUE);
+	while (tmp->next != NULL)
+	{
+		prev = tmp;
+		tmp = tmp->next;
+		x = (int *)prev->content;
+		y = (int *)tmp->content;
+		if (*x > *y)
+			return (FALSE);
+	}
+	return (TRUE);
+}
+
+int is_revsorted(t_list *head)
 {
 	int		*x;
 	int		*y;

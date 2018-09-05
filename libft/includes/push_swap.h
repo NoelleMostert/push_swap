@@ -6,7 +6,7 @@
 /*   By: nmostert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/30 09:04:04 by nmostert          #+#    #+#             */
-/*   Updated: 2018/09/04 16:36:28 by nmostert         ###   ########.fr       */
+/*   Updated: 2018/09/05 14:06:52 by nmostert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,5 +42,7 @@ int				is_sorted(t_list *head);
 void			free_split(char **arr);
 int				is_valid(int ac, char *av[]);
 int				duplicates(int ac, long arr[]);
+void			printstack(t_stack *a, t_stack *b, char *str);
+void			displaystack(t_list *astart, t_list *bstart, t_list *aend, t_list *bend);
 
 #endif

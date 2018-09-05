@@ -6,7 +6,7 @@
 /*   By: nmostert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/24 14:08:33 by nmostert          #+#    #+#             */
-/*   Updated: 2018/09/04 16:43:46 by nmostert         ###   ########.fr       */
+/*   Updated: 2018/09/05 14:23:43 by nmostert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,5 +32,6 @@ void			stackrevrot(t_stack *s);
 void			stackdel(t_stack **s);
 void			stackswap(t_stack *s);
 t_list			*stackmin(t_stack *s);
+int				stackindex(t_stack *s, t_list *elem);
 
 #endif
