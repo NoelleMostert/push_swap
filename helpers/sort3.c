@@ -6,69 +6,48 @@
 /*   By: nmostert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/05 16:32:48 by nmostert          #+#    #+#             */
-/*   Updated: 2018/09/05 17:23:41 by nmostert         ###   ########.fr       */
+/*   Updated: 2018/09/06 17:08:44 by nmostert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	sort3(t_stack *a, t_stack *b)
-{
-	if (is_sorted(a) && b->size == 0)
-		return ;
-	else if (is_revsorted(a))
-	{
-		swap_a(a);
-		ft_putendl("sa");
-		revrot_a(a);
-		ft_putendl("rra");
-	}
-
-
-int		rev_solved(t_stacks *stack_a)
-{
-	stack_a->stack = stack_a->start;
-	while (stack_a->stack->next)
-	{
-		if (stack_a->stack->data >= stack_a->stack->next->data)
-			stack_a->stack = stack_a->stack->next;
-		else
-			return (0);
-	}
-	return (1);
-}
-
-int		messy(t_stacks *stack_a)
+int		messy(t_stack *a)
 {
 	int		count;
+	int		x;
+	int		y;
+	int		z;
+
+	x = *(int *)a->head->content;
+	y = *(int *)a->head->next->content;
+	z = *(int *)a->head->next->next->content;
 
 	count = 0;
-	if (stack_a->start->data > stack_a->start->next->data &&
-		stack_a->start->next->data < stack_a->start->next->next->data)
+	if (x > y && y < z)
 		count++;
-	if (stack_a->start->data > stack_a->start->next->data &&
-		stack_a->start->next->data < stack_a->start->next->next->data &&
-		stack_a->start->next->next->data > stack_a->start->data)
+	if (x > y && y < z && z > x)
 		count++;
 	return (count);
 }
 
-void	ft_solve_thr(t_stacks *stack_a, t_stacks *stack_b)
+void	sort3(t_stack *a, t_stack *b)
 {
-	if (is_solved(stack_a) && stack_b->len == 0)
-		return ;
-	else if (rev_solved(stack_a))
+	(void )b;
+	if (is_sorted(a->head) == FALSE)
 	{
-		swap_ab(stack_a, stack_b, "sa");
-		ft_putendl("sa");
-		rotate_ab(stack_a, stack_b, "rra");
-		ft_putendl("rra");
-	}
-	else if (messy(stack_a) == 1)
-	{
-		rotate_ab(stack_a, stack_b, "rra");
-		ft_putendl("rra");
-		rotate_ab(stack_a, stack_b, "rra");
-		ft_putendl("rra");
+		 if (is_revsorted(a->head))
+		{
+			swap_a(a);
+			revrot_a(a);
+		}
+		else if (messy(a) == 1)
+		{
+			revrot_a(a);
+			revrot_a(a);
+		}
+		else
+			swap_a(a);
+
 	}
 }

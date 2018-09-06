@@ -6,7 +6,7 @@
 /*   By: nmostert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/28 16:15:26 by nmostert          #+#    #+#             */
-/*   Updated: 2018/09/03 11:24:47 by nmostert         ###   ########.fr       */
+/*   Updated: 2018/09/06 09:01:14 by nmostert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 void	stackrot(t_stack *s)
 {
-	t_stack *a;
-	t_list *head;
+	t_stack	*a;
+	t_list	*head;
 
 	if (isempty(s) == FALSE)
 	{

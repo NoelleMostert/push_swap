@@ -6,7 +6,7 @@
 /*   By: nmostert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/01 11:59:45 by nmostert          #+#    #+#             */
-/*   Updated: 2018/09/05 14:43:15 by nmostert         ###   ########.fr       */
+/*   Updated: 2018/09/06 13:40:57 by nmostert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,21 +14,9 @@
 
 static void	push_swap(t_stack *a, t_stack *b)
 {
-	char	*ret;
-	//char	*tmp;
-
 	if (is_sorted(a->head) == TRUE)
 		return ;
-	ret = ft_strnew(1);
-	if(a->size == 5)
-	{
-		b->size = 1;
-		//tmp = algo(a, b);
-		//swapnfree(&ret, ft_strjoin(ret, tmp));
-	}
-	ft_putstr(ret);
-	//free(tmp);
-	free(ret);
+	algo(a, b);
 }
 
 static void	work(int count, char **av)

@@ -6,7 +6,7 @@
 /*   By: nmostert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/30 09:04:04 by nmostert          #+#    #+#             */
-/*   Updated: 2018/09/05 14:06:52 by nmostert         ###   ########.fr       */
+/*   Updated: 2018/09/06 11:34:56 by nmostert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,10 +39,13 @@ void			push_b(t_stack *a, t_stack *b);
 void			contains_flags(int ac, char **av, t_flags *flags);
 void			flag_check(t_flags *flag);
 int				is_sorted(t_list *head);
+int				is_revsorted(t_list *head);
 void			free_split(char **arr);
 int				is_valid(int ac, char *av[]);
 int				duplicates(int ac, long arr[]);
 void			printstack(t_stack *a, t_stack *b, char *str);
 void			displaystack(t_list *astart, t_list *bstart, t_list *aend, t_list *bend);
+void			algo(t_stack *a, t_stack *b);
+void			sort3(t_stack *a, t_stack *b);
 
 #endif

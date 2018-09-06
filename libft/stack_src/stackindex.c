@@ -6,13 +6,13 @@
 /*   By: nmostert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/05 13:57:32 by nmostert          #+#    #+#             */
-/*   Updated: 2018/09/05 13:59:17 by nmostert         ###   ########.fr       */
+/*   Updated: 2018/09/06 11:25:53 by nmostert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stack.h>
 
-int	ft_stack_indexof(t_stack *s, t_list *elem)
+int	stackindex(t_stack *s, t_list *elem)
 {
 	int		count;
 	t_list	*tmp;

@@ -1,30 +1,45 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   revrotating.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nmostert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/08/25 16:48:10 by nmostert          #+#    #+#             */
-/*   Updated: 2018/09/01 13:58:24 by nmostert         ###   ########.fr       */
+/*   Created: 2018/09/06 17:15:58 by nmostert          #+#    #+#             */
+/*   Updated: 2018/09/06 17:16:41 by nmostert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-#include <stdio.h>
+#include "../includes/push_swap.h"
 
-int main(void)
+void	revrot_a(t_stack *a)
 {
-	t_list *lst;
-
-	lst = ft_lstnew("random bullshit", 74);
-	lst->next = ft_lstnew("more crap", 100);
-	ft_lstadd(&lst, ft_lstnew("grrr argh", 60));
-
-	while (lst)
+	if (a != NULL)
 	{
-		printf("%s\n", lst->str);
-		lst = lst->next;
+		stackrevrot(a);
+		ft_putendl("rra");
 	}
-	return (0);
+}
+
+void	revrot_b(t_stack *b)
+{
+	if (b != NULL)
+	{
+		stackrevrot(b);
+		ft_putendl("rrb");
+	}
+}
+
+void	double_revrab(t_stack *a, t_stack *b)
+{
+	if (a != NULL)
+		stackrevrot(a);
+	if (b != NULL)
+		stackrevrot(b);
+	ft_putendl("rrr");
+}
+
+void	revrot_ab(t_stack *a, t_stack *b)
+{
+	double_revrab(a, b);
 }

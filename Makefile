@@ -6,7 +6,7 @@
 #    By: nmostert <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/09/03 12:57:38 by nmostert          #+#    #+#              #
-#    Updated: 2018/09/04 13:40:21 by nmostert         ###   ########.fr        #
+#    Updated: 2018/09/06 17:17:15 by nmostert         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,6 +29,9 @@ CFILES =  print.c \
 		   rotating.c \
 		   swaping.c \
 		   ft_flags.c \
+		   algo.c \
+		   sort3.c \
+		   revrotating.c \
 
 OBJ_N = $(CFILES:%.c=%.o)
 

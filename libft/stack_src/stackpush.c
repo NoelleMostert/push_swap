@@ -6,7 +6,7 @@
 /*   By: nmostert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/27 14:49:15 by nmostert          #+#    #+#             */
-/*   Updated: 2018/09/04 10:43:26 by nmostert         ###   ########.fr       */
+/*   Updated: 2018/09/06 17:31:14 by nmostert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,8 @@ void	stackpush(t_stack *s, t_list *elem)
 			ft_lstadd(&s->head, elem);
 		else
 		{
-			s->head = ft_lstnew(elem->content, elem->content_size);
+			//s->head = ft_lstnew(elem->content, elem->content_size);
+			ft_lstadd(&s->head, ft_lstnew(elem->content, elem->content_size));
 			//s->size += 1;
 		}
 		s->size++;

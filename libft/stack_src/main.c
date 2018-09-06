@@ -6,7 +6,7 @@
 /*   By: nmostert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/29 11:40:40 by nmostert          #+#    #+#             */
-/*   Updated: 2018/08/29 15:54:10 by nmostert         ###   ########.fr       */
+/*   Updated: 2018/09/06 09:00:05 by nmostert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include <stack.h>
 #include <stdio.h>
 
-int main (void)
+int	main (void)
 {
 	t_stack *stack;
 	t_list	*tmp;
@@ -23,7 +23,6 @@ int main (void)
 	//stack->head = newstack("more crap", 50);
 	stackpush(stack, ft_lstnew("av", 10));
 	stackpush(stack, ft_lstnew("ab", 10));
-
 	tmp = peek(stack);
 	while (tmp != NULL)
 	{

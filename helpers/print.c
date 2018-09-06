@@ -6,7 +6,7 @@
 /*   By: nmostert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/30 11:53:31 by nmostert          #+#    #+#             */
-/*   Updated: 2018/09/04 11:49:18 by nmostert         ###   ########.fr       */
+/*   Updated: 2018/09/06 08:35:19 by nmostert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 
 void	displaystack(t_list *astart, t_list *bstart, t_list *aend, t_list *bend)
 {
-
 	while (astart != aend || bstart != bend)
 	{
 		if (astart != aend)

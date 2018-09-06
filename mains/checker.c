@@ -6,7 +6,7 @@
 /*   By: nmostert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/30 11:02:22 by nmostert          #+#    #+#             */
-/*   Updated: 2018/09/05 14:41:26 by nmostert         ###   ########.fr       */
+/*   Updated: 2018/09/06 12:28:02 by nmostert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,10 @@ static void	readdo(t_stack *a, t_stack *b, t_flags *f)
 			break ;
 		}
 		if (f->v == 1)
+		{
+			ft_putendl(str);
 			printstack(a, b, str);
+		}
 		free(str);
 	}
 	if (str != NULL)
